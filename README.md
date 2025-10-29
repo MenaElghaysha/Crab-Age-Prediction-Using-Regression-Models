@@ -72,13 +72,6 @@ Trained and compared multiple regression algorithms:
 
 Fine-tuned the **LightGBM** model using `GridSearchCV` with parameters:
 
-```python
-param_grid = {
-    "Model__n_estimators": [50, 100, 150],
-    "Model__max_depth": [5, 10, 15, 30],
-    "Model__learning_rate": [0.01, 0.1, 0.2, 0.5]
-}
-```
 
 ### 5. Evaluation
 
@@ -88,14 +81,16 @@ Used **Root Mean Squared Error (RMSE)** to evaluate model performance on trainin
 
 ## 📈 Results
 
-| Model             | Validation RMSE | Notes             |
-| ----------------- | --------------- | ----------------- |
-| Linear Regression | Higher          | Baseline          |
-| Random Forest     | Moderate        | Improved accuracy |
-| XGBoost           | Low             | Strong performer  |
-| **LightGBM**      | **Lowest RMSE** | ✅ Selected model  |
-
 The **LightGBM** model provided the best generalization with minimal overfitting, making it the final chosen model.
+
+|Metric	| Train RMSE	| Validation RMSE	|Test RMSE|
+| ------|---------------|-------------------|---------|
+|Value	|1.956	|2.061	|2.417  |
+
+
+
+
+These results show that the model generalizes well across unseen data, with only a small increase in error from validation to test sets.
 
 ---
 
